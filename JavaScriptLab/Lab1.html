@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+      <div id="1" class="container">
+          <div class="row mt-3 mb-3">
+              <div class="col">
+                  
+              </div>
+              <div class="col">
+                  1
+              </div>
+              <div class="col">
+                  2
+              </div>
+              <div class="col">
+                  3
+              </div>
+              <div class="col">
+                  4
+              </div>
+              <div class="col">
+                  5
+              </div>
+              <div class="col">
+                  6
+              </div>
+              <div class="col">
+                  7
+              </div>
+              <div class="col">
+                  8
+              </div>
+              <div class="col">
+                  9
+              </div>
+          </div>
+      </div>
+      <script>
+        //alert("數字是"  + prompt("輸入數字") );
+        //console.log("hello world" + prompt("呆呆要不要買醬油"));
+        /*var a1 = 123;
+        var a2 = 456.789;
+        var a3 = "123456789";
+        var a4 = false;;
+        alert("a1 " + typeof a1);
+        alert("a2 " + typeof a2);
+        alert("a3 " + typeof a3);
+        alert("a4 " + typeof a4);*/
+        /*var a = true;
+        var b = 1;
+        alert(a==b);
+        var c = false;
+        var d = 0;
+        alert(c==d);*/
+        /*var a = "abc";
+        var b = "123";
+        var c = 1;
+        alert("a不適數字 : " + isNaN(a));
+        alert("b不適數字 : " + isNaN(b));
+        alert(b+c);*/
+        /*var input = prompt("請輸入數字");
+        var number = parseInt(input);
+        if(isNaN(number))
+        {
+            alert(input + "不適數字");
+        }
+        else
+        {
+            alert(input + "是數字");
+        }*/
+        /*var a = "abc",b = 123, c , d;
+        e = 100;
+        alert("a: " + a);
+        alert("b: " + b);
+        alert("c: " + c);
+        alert("d: " + d);
+        alert("e: " + e);*/
+        /*var a = 123;
+        {
+            var b = a + 100;
+            alert(b);
+        }
+        alert(a);
+        alert(b);*/
+        /*var data = 
+        {
+            a : 0,
+            b : 0
+        }
+        data.a = prompt("請輸入攝氏溫度")
+        data.b = (data.a * 1.8) + 32;
+        alert("攝氏溫度 (" + data.a + "度) 轉華氏溫度為 : " + data.b + "度");*/
+        /*var a = 123;
+        var b = "123";
+        alert(typeof a);
+        alert(typeof b);
+        alert(a == b);
+        alert(a === b);*/
+        /*for(var i=1;i<10;i++)
+        {
+            for(var j=1;j<10;j++)
+            {
+                document.writeln(i+"x"+j+"="+i*j);
+                console.log(i+"x"+j+"="+i*j);
+            }
+            document.write("<br/>");
+        }*/
+        /*var num = Math.random();
+
+        document.writeln(num * 10 + "<br />");
+        document.writeln(num * 100 + "<br />");
+        document.writeln(num * 1000 + "<br />");
+        document.writeln(Math.floor(num * 10) + "<br />");
+        document.writeln(Math.floor(num * 100) + "<br />");
+        document.writeln(Math.floor(num * 1000) + "<br />");*/
+        /*var a = Math.floor(Math.random()*100 + 1);
+        var sma = 1;
+        var ma = 100;
+        var i=5;
+        while(i>0)
+        {
+            console.log(""+a);
+            var ans = prompt("總次數剩餘 : " + i + " 輸入數字 "+sma + "~" + ma);
+            i--;
+            if(ans==a)
+            {
+                alert("你猜對了 : " + ans + " 剩餘次數 : " + i);
+                break;
+            }
+            else if(ans>a)
+            {
+                ma = ans;
+                alert("小一點");
+            }
+            else if(ans<a)
+            {
+                sma = ans;
+                alert("大一點");
+            }
+        }
+        if(i==0)
+        {
+            alert("廢物");
+        }*/
+        var container1=document.getElementById("1");
+        for(var i=1;i<10;i++)
+        {
+            var row1=document.createElement("div");
+            row1.className="row mt-3 mb-3";
+            for(var j=0;j<10;j++)
+            {
+                var col1=document.createElement("div");
+                col1.className="col";
+                if(j==0)
+                {
+                    col1.innerText = i;
+                }
+                else
+                {
+                    col1.innerText = i*j;
+                }
+                row1.appendChild(col1);
+            }
+            container1.appendChild(row1);
+        }
+      </script>
+      
+  </body>
+</html>

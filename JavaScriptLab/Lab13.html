@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .col.border {
+            height: 100px;
+            overflow: auto;
+            padding: 5px;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fault">
+        <div class="row mb-3">
+            <div class="col" style="background:#EF4F69;height:10px">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-center">
+                <button id="bt-lef" style="color:#EF4F69" type="button" class="btn btn-lg btn-link turnl">
+                    <i class="fa fa-caret-left" style="font-size:42px;"></i>
+                </button>
+                <button id="bt-rig" style="color:#EF4F69" type="button" class="btn btn-lg btn-link turnl">
+                    <i class="fa fa-caret-right" style="font-size:42px;"></i>
+                </button>
+            </div>
+            <div class="col-7 text-center">
+                <h1 style="color:#EF4F69" id="textheader">2018 年 3 月</h1>
+            </div>
+            <div class="col-3">
+                <div class="btn-group">
+                    <span class="input-group-btn">
+                        <button id="btn_year_mounth" style="color:#EF4F69" type="button" class="btn btn-lg btn-light dropdown-toggle" aria-label=""
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            月
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">月</a>
+                            <a class="dropdown-item" href="#">年</a>
+                        </div>
+                    </span>
+                </div>
+                <!-- Button trigger modal -->
+                <button id="btn_add" style="color:#EF4F69" type="button" class="btn btn-light" data-toggle="modal" data-target="#modelId">
+                    <i class="material-icons" style="font-size:30px;">playlist_add</i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modelTitleId">新增</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">日期</span>
+                                    </div>
+                                    <input id="Day" type="date" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">時間</span>
+                                    </div>
+                                    <input id="Time" type="time" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">事項</span>
+                                    </div>
+                                    <textarea id="Text" class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">地點</span>
+                                    </div>
+                                    <input id="Location" type="text" class="form-control" placeholder="ex.新竹市..." aria-label="Username" aria-describedby="basic-addon1">
+                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId2">
+                                            地圖
+                                          </button>
+                                </div>
+                                <div class="input-group mb-3">
+                                    選擇喜歡的顏色&nbsp;:&nbsp;
+                                    <input id="Color" class="" type="color" name="favcolor" value="#ff0000">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button id="save" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modelTitleId1">查看</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">時間</span>
+                                    </div>
+                                    <input id="Time1" type="time" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">事項</span>
+                                    </div>
+                                    <textarea id="Text1" class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <button id="markershow" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId2">
+                                        地圖
+                                    </button>
+                                </div>
+                                <div class="input-group mb-3">
+                                    選擇喜歡的顏色&nbsp;:&nbsp;
+                                    <input id="Color1" class="" type="color" name="favcolor" value="#ff0000">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn_change" type="button" class="btn btn-secondary" data-dismiss="modal">修改</button>
+                                <button id="btn_delete" type="button" class="btn btn-primary" data-dismiss="modal">刪除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modelTitleId">地圖</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="map" class="mapstyle" style="widows: 100%;height:300px"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="markercheck" type="button" class="btn btn-primary" data-dismiss="modal">確定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3" style="color:#EF4F69">
+            <div class="col text-center">
+                SUN
+            </div>
+            <div class="col text-center">
+                MON
+            </div>
+            <div class="col text-center">
+                TUE
+            </div>
+            <div class="col text-center">
+                WED
+            </div>
+            <div class="col text-center">
+                THU
+            </div>
+            <div class="col text-center">
+                FRI
+            </div>
+            <div class="col text-center">
+                SAT
+            </div>
+        </div>
+        <div class="row" style="color:#EF4F69">
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+        </div>
+        <div class="row" style="color:#EF4F69">
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+        </div>
+        <div class="row" style="color:#EF4F69">
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+        </div>
+        <div class="row" style="color:#EF4F69">
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+        </div>
+        <div class="row" style="color:#EF4F69">
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+        </div>
+        <div class="row" style="color:#EF4F69">
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+            <div class="col border">
+            </div>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCErSMX3-qoyRQSxLMvLfODo_Q1j2fgQac" async defer></script>
+    <script>
+        var map;
+        var marker = null;
+        var center = {
+            lat: 24.7571075,
+            lng: 120.952429
+        };
+
+        window.onload = function () {
+            map = new google.maps.Map(
+                document.getElementById('map'), {
+                    center: center,
+                    zoom: 15,
+                });
+            map.addListener('click', function (e) {
+                console.log(e);
+                map.setCenter(e.latLng);
+                if (marker != null) {
+                    marker.setMap(null);
+                    marker = null;
+                }
+                marker = new google.maps.Marker({
+                    position: e.latLng,
+                    map: map,
+                    icon: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-64.png',
+                    title: e.latLng.toString()
+                });
+                var place = document.getElementById("Location");
+                place.value = e.latLng.lat()+","+e.latLng.lng();
+            });
+        }
+
+
+        var marker_show = document.getElementById("markershow");
+        marker_show.onclick = function(){
+            var click = event.srcElement;
+            var time = document.getElementById("Time1");
+            var text = document.getElementById("Text1");
+            var model = document.getElementById("modelTitleId1");
+            var a = model.innerText.split("月");
+            var b = a[1].split("日");
+            console.log(b);
+            for(var index of array)
+            {
+                if(index.Time==time.value&&index.Word==text.value&&index.Days==b[0])
+                {
+                    if (marker != null) {
+                        marker.setMap(null);
+                        marker = null;
+                    }
+                    console.log(index);
+                    marker = new google.maps.Marker({
+                        position: index.location,
+                        map: map,
+                        icon: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-64.png',
+                        title: index.address,
+                    });
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        var Today = new Date();
+        var year = null;
+        var month = null;
+        var boole = true;
+        var array = [];
+
+        if (localStorage.arrays) {
+
+        } else {
+            var Array = JSON.stringify(array);
+            localStorage.setItem("arrays", Array);
+        }
+        //localStorage("arrays",JSON.stringify(array));
+
+
+        function getFirstDay(year, month) {
+            var Firstdate = new Date(year, month, 1);
+            return Firstdate.getDay();
+        }
+
+        function getMonthDays(year, month) {
+            var MonthDays = new Date(year, month + 1, 1);
+            MonthDays.setHours(MonthDays.getHours() - 3);
+            return MonthDays.getDate();
+        }
+
+
+
+        function GetNextThisMonthTime(now) {
+            var getcol = document.getElementsByClassName("border");
+            var i = 1;
+            while (now < getcol.length) {
+                getcol[now].innerText = i;
+                getcol[now].style.background = "#F1F1F1";
+                getcol[now].style.color = "#75738c";
+                getcol[now].id = i;
+                now++;
+                i++;
+            }
+        }
+
+        function GetBackThisMonthTime(now) {
+            var getcol = document.getElementsByClassName("border");
+            var i = getMonthDays(year, month - 1);
+            while (now >= 0) {
+                getcol[now].innerText = i;
+                getcol[now].style.background = "#F1F1F1";
+                getcol[now].style.color = "#75738c";
+                getcol[now].id = i;
+                now--;
+                i--;
+            }
+        }
+
+        function Delete() {
+            var getcol = document.getElementsByClassName("border");
+            for (var i = 0; i < getcol.length; i++) {
+                getcol[i].innerText = "";
+                getcol[i].style.background = "";
+                getcol[i].style.color = "#EF4F69"
+            }
+        }
+
+        function GetMonthTime(firstday, monthday) {
+            var getcol = document.getElementsByClassName("border");
+            GetBackThisMonthTime(firstday - 1);
+            for (var i = 1; i <= monthday; i++) {
+                var ul = document.createElement("ul");
+                ul.className = "list-group"
+                getcol[firstday].innerText = i;
+                getcol[firstday].id = i;
+                for (var index of array) {
+                    if (index.Year == year && index.Month == month && index.Days == i) {
+                        var li = document.createElement("li");
+                        li.setAttribute("data-toggle", "modal");
+                        li.setAttribute("data-target", "#modelId1");
+                        li.style.background = "#" + index.Color;
+                        li.style.color = "#000000"
+                        li.innerHTML = index.Time + "&nbsp" + index.Word;
+                        li.className = "small border-0";
+                        getcol[firstday].appendChild(li);
+                    }
+                }
+                firstday++;
+            }
+            GetNextThisMonthTime(firstday);
+        }
+
+        function GetTime() {
+            var arrays = localStorage.getItem("arrays");
+            array = JSON.parse(arrays);
+            Delete();
+            year = Today.getFullYear();
+            month = Today.getMonth();
+            var getfirstday = getFirstDay(year, month);
+            var getmonthDays = getMonthDays(year, month);
+            GetMonthTime(getfirstday, getmonthDays);
+            document.getElementById("textheader").innerHTML = year + " 年 " + (month + 1) + " 月 ";
+            SetModelOnclick();
+
+        }
+
+        function SetModelOnclick() {
+            var li = document.getElementsByTagName("li");
+            for (var i = 0; i < li.length; i++) {
+                var model = document.getElementById("modelTitleId1");
+                var time = document.getElementById("Time1");
+                var text = document.getElementById("Text1");
+
+                li[i].onclick = function () {
+                    DeleteListGroup();
+                    var check = event.srcElement;
+                    var col = check.parentNode;
+                    model.innerText = year + "年" + (month + 1) + "月" + col.id + "日";
+                    var s = check.innerHTML;
+                    var word = s.split("&nbsp;");
+                    time.value = word[0];
+                    text.value = word[1];
+                    ChangeData(check);
+                    DeleteData(check);
+                }
+            }
+        }
+
+        function DeleteData(check) {
+            var btn_delete = document.getElementById("btn_delete");
+            btn_delete.onclick = function () {
+                var s = check.innerHTML;
+                var word = s.split("&nbsp;");
+                var col = check.parentNode;
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i].Word == word[1] && array[i].Time == word[0] && array[i].Days == col.id) {
+                        array.splice(i, 1);
+                        break;
+                    }
+                }
+                var Array = JSON.stringify(array);
+                localStorage.setItem("arrays", Array);
+                DeleteListGroup()
+                GetTime();
+            }
+        }
+
+        function ChangeData(check) {
+            var btn_change = document.getElementById("btn_change");
+            btn_change.onclick = function () {
+                var time = document.getElementById("Time1");
+                var text = document.getElementById("Text1");
+                var color = document.getElementById("Color1");
+                var s = check.innerHTML;
+                var word = s.split("&nbsp;");
+                var col = check.parentNode;
+                var color1 = color.value.split("#");
+                for (var index of array) {
+                    if (index.Word == word[1] && index.Time == word[0] && index.Days == col.id) {
+                        index.Time = time.value;
+                        index.Word = text.value;
+                        index.Color = color1[1];
+                        break;
+                    }
+                }
+                DeleteListGroup()
+                var Array = JSON.stringify(array);
+                localStorage.setItem("arrays", Array);
+                GetTime();
+            }
+        }
+
+        function DeleteListGroup() {
+            var time = document.getElementById("Time1");
+            var text = document.getElementById("Text1");
+            var color = document.getElementById("Color1");
+            time.value = "";
+            text.value = "";
+            color.value = "#ff0000";
+        }
+
+        function SaveData() {
+            var btn_save = document.getElementById("save");
+            btn_save.onclick = function () {
+                var input = document.getElementsByClassName("form-control");
+                var color = document.getElementById("Color");
+                var place = document.getElementById("Location");
+                var time = input[0].valueAsDate;
+                var color1 = color.value.split("#");
+                var location;
+                if(place.value.indexOf(",")>-1)
+                {
+                    var w = place.value.split(",");
+                    location = {lat:parseFloat(w[0]),lng:parseFloat(w[1])};
+                    var Data = {
+                        Year: time.getFullYear(),
+                        Month: time.getMonth(),
+                        Days: time.getDate(),
+                        Time: input[1].value,
+                        Word: input[2].value,
+                        Color: color1[1],
+                        address: place.value,
+                        location: location,
+                    };
+                    array.push(Data);
+                    var Array = JSON.stringify(array);
+                    localStorage.setItem("arrays", Array);
+                    GetTime();
+                }
+                else
+                {
+                    setTimeout(function(){
+                        var geocoder = new google.maps.Geocoder();
+                        geocoder.geocode({ address: place.value },
+                        function (result, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+
+                                var locations = result[0].geometry.location;
+                                location = locations;
+                                var Data = {
+                                    Year: time.getFullYear(),
+                                    Month: time.getMonth(),
+                                    Days: time.getDate(),
+                                    Time: input[1].value,
+                                    Word: input[2].value,
+                                    Color: color1[1],
+                                    address: place.value,
+                                    location: location,
+                                };
+                                array.push(Data);
+                                var Array = JSON.stringify(array);
+                                localStorage.setItem("arrays", Array);
+                                GetTime();
+                            } else {
+                                console.log('解析失敗!回傳狀態為：' + status);
+                                var Data = {
+                                    Year: time.getFullYear(),
+                                    Month: time.getMonth(),
+                                    Days: time.getDate(),
+                                    Time: input[1].value,
+                                    Word: input[2].value,
+                                    Color: color1[1],
+                                    address: place.value,
+                                    location: location,
+                                };
+                                array.push(Data);
+                                var Array = JSON.stringify(array);
+                                localStorage.setItem("arrays", Array);
+                                GetTime();
+                            }
+                        });
+                    },500);
+                }
+            }
+        }
+        GetTime();
+        var btn_marker_check = document.getElementById("markercheck");
+        btn_marker_check.onclick = function(){
+            marker.setMap(null);
+            marker = null;
+        }
+        var btn_mounth_year = document.getElementsByClassName("dropdown-item");
+        for (var i = 0; i < btn_mounth_year.length; i++) {
+            btn_mounth_year[i].onclick = function () {
+                var check = event.srcElement;
+                var btn = document.getElementById("btn_year_mounth");
+                btn.innerText = check.innerText;
+                if (btn.innerText == "月") {
+                    boole = true;
+                } else if (btn.innerText == "年") {
+                    boole = false;
+                }
+            }
+        }
+
+        var btn_Save = document.getElementById("btn_add");
+        btn_Save.onclick = function () {
+            SaveData();
+        }
+        var btn_left_right = document.getElementsByClassName("turnl");
+        btn_left_right[0].onclick = function () {
+            var text = document.getElementById("btn_year_mounth").innerText;
+            if (boole == true) {
+                Today = new Date(year, month - 1, 1);
+            } else {
+                Today = new Date(year - 1, month, 1);
+            }
+            GetTime();
+        }
+        btn_left_right[1].onclick = function () {
+            var text = document.getElementById("btn_year_mounth").innerText;
+            if (boole == true) {
+                Today = new Date(year, month + 1, 1);
+            } else {
+                Today = new Date(year + 1, month, 1);
+            }
+            GetTime();
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
