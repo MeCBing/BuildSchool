@@ -1,6 +1,6 @@
 # **BuildSchool-HTML/CSS/JS/JQ**  
   
-### 參加BuildSchool只為了學習新的技術，下面這些技術都是我第一次接觸所做出來的做品  
+### 參加BuildSchool只為了學習新的技術，下面這些技術都是我第一次接觸所做出來的作品  
   
 ## **深喉嚨**  
 第一次使用Bootstrap刻板  
