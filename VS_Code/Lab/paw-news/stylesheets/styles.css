@@ -1,0 +1,185 @@
+body {
+    font-size: 15px;
+    line-height: 1.4em;
+    font-family: sans-serif;
+    color: #333;
+}
+
+a {
+    color: #009ced;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #008ad1;
+    text-decoration: underline;
+}
+
+h1.logo a {
+    position: relative;
+    display: block;
+    left: 10px;
+    width: 376px;
+    height: 81px;
+    background: url('http://www.ctitv.com.tw/wp-content/uploads/2017/01/%E6%96%B0%E8%81%9E%E6%B7%B1%E5%96%89%E5%9A%A8-%E5%AE%98%E7%B6%B2%E7%94%A8-1.jpg') no-repeat;
+    white-space: nowrap;
+    background-size: 70%;
+    text-indent: 110%;
+    overflow: hidden;
+}
+
+.out {
+    width: 100%;
+}
+
+.side-title {
+    padding-bottom: 4px;
+    border-bottom: #ff555d 4px solid;
+}
+
+.top-news {
+    padding-left: 30px;
+}
+
+.top-news li {
+    line-height: 1.5em;
+    padding-bottom: 5px;
+}
+
+.main-menu {
+    background: #0073B8;
+    height: 21px;
+    margin-bottom: 20px;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu ul li {
+    float: left;
+    width: 25%;
+}
+
+.main-menu ul li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+}
+
+.main-menu ul li a:hover {
+    background: #32B3DB;
+}
+
+.container {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.header .container {
+    position: relative;
+}
+
+.header .slogan {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.slogan strong {
+    font-size: 1.5em;
+    color: #ff555d;
+}
+
+.main {
+    width: 72%;
+    float: left;
+    padding-bottom: 30px;
+}
+
+.side {
+    width: 22%;
+    float: right;
+    padding-bottom: 30px;
+}
+
+.top-news li {
+    border-bottom: black outset 0.8px;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0 0px;
+    clear: both;
+}
+
+.headline {
+    padding: 10px 10px 10px 320px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-left: 5px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.headline h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.headline img {
+    width: 300px;
+    position: absolute;
+    left: 10px;
+}
+
+.headline .more {
+    display: block;
+    text-align: right;
+}
+
+ul.news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news {
+    box-sizing: border-box;
+    width: 48%;
+    height: 250px;
+    overflow: hidden;
+    padding: 10px;
+    margin-bottom: 20px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.news h2 {
+    margin-top: 0;
+    line-height: 1.2em;
+}
+
+.news .img {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+a.back-top {
+    position: fixed;
+    bottom: 150px;
+    right: 0;
+    bottom: 120px;
+    background: #0073B8;
+    padding: 10px 20px;
+    font-size: 2em;
+    color: #fff;
+}

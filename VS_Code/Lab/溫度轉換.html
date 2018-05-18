@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+          <div class="row mb-3 mt-4">
+              <div class="offset-2">
+
+              </div>
+              <div class="col-3 text-right">
+                  請選擇轉換方式 :
+              </div>
+              <div class="col-7">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">華氏轉攝氏</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">攝氏轉華氏</label>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row  mb-3">
+              <div class="offset-3">
+
+              </div>
+              <div class="col-2">
+                    <button type="button" id="1" class="btn btn-info btn-block">1</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="2" class="btn btn-info btn-block">2</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="3" class="btn btn-info btn-block">3</button>
+              </div>
+          </div>
+          <div class="row mb-3">
+              <div class="offset-3">
+
+              </div>
+              <div class="col-2">
+                    <button type="button" id="4" class="btn btn-info btn-block">4</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="5" class="btn btn-info btn-block">5</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="6" class="btn btn-info btn-block">6</button>
+              </div>
+          </div>
+          <div class="row mb-3">
+              <div class="offset-3">
+
+              </div>
+              <div class="col-2">
+                    <button type="button" id="7" class="btn btn-info btn-block">7</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="8" class="btn btn-info btn-block">8</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="9" class="btn btn-info btn-block">9</button>
+              </div>
+          </div>
+          <div class="row mb-3">
+              <div class="offset-3">
+
+              </div>
+              <div class="col-2">
+                    <button type="button" id="0" class="btn btn-info btn-block">0</button>
+              </div>
+              <div class="col-2">
+                    <button type="button" id="." class="btn btn-info btn-block">.</button>
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row mb-3">
+              <div class="col-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">請輸入數字</span>
+                    </div>
+                    <input id="inputtext" type="text" class="form-control">
+                   </div>
+              </div>
+              <div class="col-2">
+                  <button type="button" onclick="input1()" class="btn btn-success btn-block">轉換</button>
+              </div>
+              <div class="col-2">
+                  <button type="button" onclick="delete1()" class="btn btn-danger btn-block">取消</button>
+              </div>
+          </div>
+          <div class="row mb-3">
+              <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">結果</span>
+                    </div>
+                    <input type="text" class="form-control">    
+                   </div>
+              </div>
+          </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS <-->
+        <script>
+            
+            //javascript 他一定要寫在body內的html程式的最下面不然會壞掉
+            /*
+                ID得出的解果只有一筆
+                document.getElementById("?");
+                ClassName得出的解果有很多
+                document.getElementsByClassName("row");
+                TagName得出的解果有很多種
+                document.getElementsByTagName("div");
+                通常用到的因該就這些就看你怎麼去做判斷
+            */
+            
+            /*
+                btn.getElementsById("1");
+                他不給過所以不能像linq依樣
+                當我在找tagName的東西時我是先在f12裡面下指令比如說
+                document.getElementsByTagName("button");
+                用她的解果去找我要改的是那些
+                我這程式最後兩個是轉換跟取消
+                所以我在btn.length的地方多加了-2
+            */
+
+            var btn = document.getElementsByTagName("button");
+            for(var i=0;i<btn.length-2;i++)
+            {
+                var button = btn[i];
+                /*
+                    button.onclick的用法
+                    第一種:(後定義)
+                    原本是長這樣
+                    <button type="button" id="7" class="btn btn-info btn-block">7</button>
+                    抓資料的tagname == button
+                    <!--
+                    <script>
+                        var btn = document.getElementsByTagName("button");
+                        把它獨立出來
+                        var button = btn[i];
+                        當我們用button.onclick = function(){
+                            要做的事
+                        }
+                        他會在裡面增加一個東西
+                        <button onclick="function()" type="button" id="7" class="btn btn-info btn-block">7</button>
+                        但是你看不到
+                    </script>
+                    -->
+                    
+                    第二種:(前定義)
+                    自己加onclick="名稱()"
+                    <!--<button onclick="名稱()" type="button" id="7" class="btn btn-info btn-block">7</button>
+                    <script>
+                        自己建onclick function
+                        function 名稱() {
+                            要做的事
+                        }
+                    </script>-->
+                */
+
+                /*最重要的一點 ! 不管你html怎麼寫當你用後定義的用法時前定義的東西都會被覆蓋*/
+
+                button.onclick = function(){
+                    var check = event.srcElement;
+                    /*
+                        這裡有可能遇到的問題就是check.innerText有時候很奇怪抓不到這時就還innerHTML
+                        再找不到就用f12去看哪個值是你需要的數字就把它拿出來用
+                        比如.value
+                        我當時就在納悶為啥.innerText出不來
+                        後來我就用f12去看哪個是我要的答案
+                        最後找到value裡面有
+                    */
+                    document.getElementById("inputtext").value += check.innerText;
+                }
+            }
+            //清除資料
+            /*
+                我這裡用了很多[2],[3]是因為我不適用id來設但是我知道他是第幾個就可以這樣用
+            */
+            function delete1() {
+                var inp2 = document.getElementsByTagName("input");
+                inp2[2].value = null;
+                inp2[3].value = null;
+            }
+            //轉換
+            function input1(){
+                //這裡的input也是用一樣的方式
+                var inp1 = document.getElementsByTagName("input");
+                if(inp1[0].checked)
+                {
+                    var a = inp1[2].value;
+                    var b = (a-32)/1.8;
+                    inp1[3].value = Number.parseFloat(b).toFixed(2);
+                }
+                else if(inp1[1].checked)
+                {
+                    var a = inp1[2].value;
+                    var b = (a*1.8)+32;
+                    inp1[3].value = Number.parseFloat(b).toFixed(2);
+                }
+                else
+                {
+                    /*當然也可以在function裡用其他function*/
+                    alert("輸入錯誤");
+                    delete1();
+                }
+            }
+
+            //這不重要
+            var nodes = document.getElementsByTagName("button");
+            for(var i=0;i<nodes.length;i++)
+            {
+                console.log(nodes[i].innerText);
+            }
+        </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
