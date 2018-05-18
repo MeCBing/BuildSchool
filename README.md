@@ -6,6 +6,11 @@
   
 ![Image](https://github.com/MeCBing/BuildSchool/blob/master/PICTURE/vscode1.JPG)
   
+## **蝦皮**  
+大型刻板依照蝦皮的網頁所刻出  
+  
+![Image](https://github.com/MeCBing/BuildSchool/blob/master/PICTURE/buildschool2018mecbing.azurewebsites.net_shopee.html.png)
+  
 ## **行車費用**  
 運用JQuary連動Google Api抓取路線規劃，
 提供道路收費行車費用計算  
